@@ -51,11 +51,22 @@ function unflipCards(){
     },1500)
 }
 
+//reseta tabuleiro 
 function resetBoard(){
     [hasFlipedCard,lockBoard] = [false,false]
     [firstCard,secondCard] = [null,null]
 }
 
+
+//embaralha as cartas no tabuleiro
+
+
+(function shuffle(){
+    cards.forEach((card) => {
+        let randomPosition = Math.floor(Math.random() * 12)  //gera valor de 0 a 11
+        card.style.order = randomPosition
+    } )
+})()   //Immediately invoked function - funcao renderizada(executada) imediatamente após ser definida
 
 //altera class da carta
 cards.forEach((card) => {
